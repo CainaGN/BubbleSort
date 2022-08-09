@@ -7,11 +7,39 @@ quanti variáveis
 quantidade de comparaçoes
 */
 
+void swap(int *a, int *b){
+
+            int aux = *b;
+            *b = *a;
+            *a = aux;
+
+
+}
+
+
+void bubble(int *vet[], int size)
+{
+  int n = size;
+
+    while ( n > 0)
+    {
+   
+    for(int i = 0; i < 8; i++){
+
+        if(vet[i] >= vet[i+1]){
+           swap(&vet[i], &vet[i+1]);
+           
+        }
+    }
+
+    n--;
+    }
+
+}
 
 int main(){
     
     int vet[8];
-    int aux;
     int n = sizeof(vet);
      
        for (int i = 0; i < 8; i++)
@@ -26,23 +54,10 @@ int main(){
         }
 
 
-    while ( n > 0)
-    {
-   
-    for(int i = 0; i < 8; i++){
-
-        if(vet[i] >= vet[i+1]){
-            aux = vet[i+1];
-            vet[i + 1] = vet[i];
-            vet[i] = aux;
-        }
-    }
-
-    n--;
-    }
+    bubble(&vet, 8);
 
     printf("\n");
- for (int i = 0; i < 8; i++)
+    for (int i = 0; i < 8; i++)
         {
             printf("%d ", vet[i]);
         }
