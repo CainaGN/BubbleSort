@@ -1,10 +1,9 @@
-
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-#define size_v 1000
 #include <time.h>  
-
+#include <stdbool.h>
+#define size_v 10
 void swap(int *a, int *b){
 
             int aux = *b;
@@ -14,30 +13,40 @@ void swap(int *a, int *b){
 }
 
 
-void bubble(int *vet[], int size)
+void bubble(int *vet[])
 {
-  int n = size;
+   int trocas = 0;
 
-    while ( n > 0)
+    for( int n = 0; n < size_v - 1; n++)
     {
-   
-    for(int i = 0; i < size_v; i++){
+       bool swapped = false;
+    
+    for(int i = 0; i < size_v - 1; i++)
+        {
 
-        if(vet[i] >= vet[i+1]){
-           swap(&vet[i], &vet[i+1]);
-           
+            if(vet[i] >= vet[i+1])
+            {
+            swap(&vet[i], &vet[i+1]);
+            swapped = true;
+            trocas++;
+            }
+
         }
+        if(swapped == false)
+            {
+                break;
+            }
+    
+        
     }
-
-    n--;
-    }
-
+        
+   printf("\ntrocas: %d\n", trocas);
 }
 
 
 
 
-void selectionSort(int *vetor[], int size){
+void selectionSort(int *vetor[]){
 
     for(int i = 0; i < size_v; i++){
         int menor  = i; // armazena apenas o índice
@@ -63,25 +72,19 @@ void print(int *vetor[]){
 
 int main(){
     
-    int vet[size_v];
-    double timer = 0.0;
+    int vet[size_v];// = {0,1,3,2,4,5,6,8,7,9};
+    float timer = 0.0;
     time_t begin = time(NULL);
-
-
+    time_t t;
 
        for (int i = 0; i < size_v; i++)
-  {
-    
-    vet[i] = (rand() % 100);
-  }
+       {
+        //srand ( (unsigned) time (&t));
+         vet[i] = (rand() % 100);
+        }
 
-      /*  for (int i = 0; i < size_v; i++)
-        {
-            printf("%d ", vet[i]);
-        }*/
-
-
-    selectionSort(&vet, size_v);
+    bubble(&vet);
+    //selectionSort(&vet);
 
     printf("\n");
     print(&vet);
