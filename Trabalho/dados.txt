@@ -1,0 +1,62 @@
+
+
+Insertion sort: 
+Tempo: 2.000000 s
+Quantidade de variáveis: 9
+Movimentos: 621288864
+Tamanho do vetor: 50000
+
+Selection sort: 
+Tempo: 8.000000 s
+Quantidade de variáveis: 10
+Trocas: 1237176645
+Comparacoes: 1242114255
+Tamanho do vetor: 50000
+
+Bubble sort: 
+Tempo: 17.000000 s
+Quantidade de variáveis: 11
+Trocas: -1800012918
+Comparacoes: -1795067295
+Tamanho do vetor: 50000
+
+Insertion sort: 
+Tempo: 2.000000 s
+Quantidade de variáveis: 9
+Movimentos: 621288864
+Tamanho do vetor: 50000
+
+Selection sort: 
+Tempo: 8.000000 s
+Quantidade de variáveis: 10
+Trocas: 1237176645
+Comparacoes: 1242114255
+Tamanho do vetor: 50000
+
+Bubble sort: 
+Tempo: 18.000000 s
+Quantidade de variáveis: 11
+Trocas: -1800012918
+Comparacoes: -1795067295
+Tamanho do vetor: 50000
+
+Insertion sort: 
+Tempo: 186.000000 s
+Quantidade de variáveis: 9
+Movimentos: 1767073913
+Tamanho do vetor: 500000
+
+Selection sort: 
+Tempo: 845.000000 s
+Quantidade de variáveis: 10
+Trocas: -822603269
+Comparacoes: -772669292
+Tamanho do vetor: 500000
+
+Bubble sort: 
+Tempo: 1614.000000 s
+Quantidade de variáveis: 11
+Trocas: 841401210
+Comparacoes: 890896833
+Tamanho do vetor: 500000
+
