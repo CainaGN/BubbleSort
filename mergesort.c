@@ -1,7 +1,8 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
-
+#include <time.h>
+#define TAM 250000
 int mergesort(int arr[], int inicio, int fim)
 {
 
@@ -9,7 +10,7 @@ int mergesort(int arr[], int inicio, int fim)
     {
         int meio = inicio + (fim - inicio) / 2;
         mergesort(arr, inicio, meio);
-        mergesort(arr, meio + 1, fim);
+        mergesort(arr, meio + 1, fim); 
         merge(arr, inicio, meio, fim);
     }
 
@@ -29,15 +30,17 @@ void merge(int arr[], int inicio, int meio, int fim)
     }
     for (int i = 0; i < n2; i++)
     {
-        R[i] = arr[inicio + i];//pensar...?
+      R[i] = arr[meio + 1 + i];
     }
     
-    int i = 0, j = 0, k = 0;
+    int i = 0, j = 0, k = inicio;
+    
     while(i < n1 && j < n2)
     {
         if(L[i] <= R[j])
         {
             arr[k] = L[i];
+            i++;
         } else {
                     arr[k] = R[j];
                     j++;
@@ -61,12 +64,35 @@ void merge(int arr[], int inicio, int meio, int fim)
 
 }
 
+void print(int vetor[]){
+        for (int i = 0; i < TAM; i++)
+        {
+            printf("%d ", vetor[i]);
+        }
+
+}
+
 
 int main (){
 
-    int arr[3, 0, 7, 1, 5, 2, 4, 6];
-   // mergesort();
-   // print();
+    float timer = 0.0;
+    time_t begin = time(NULL);
+
+    int arr[TAM];
+
+    for (int i = 0; i < TAM; i++)
+       {
+         arr[i] = (rand() % 200);
+        }
+
+    mergesort(arr, 0, TAM - 1);
+    
+    time_t end = time(NULL);
+        
+    timer = (end - begin)/ CLOCKS_PER_SEC;
+    
+    //print(arr);
+    printf("tempo de execucao: %f", timer);
 
     return 0;
 }
