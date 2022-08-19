@@ -2,6 +2,7 @@
 #include "float_vector.h"
 #include <stdio.h>
 #include <stdlib.h>
+#include <stdbool.h>
 
 struct float_vector{
     int capacity; //numero maximo de elementos
@@ -23,7 +24,7 @@ FloatVector *create(int tam)
     FloatVector *vet = (FloatVector*)calloc(1, sizeof(FloatVector));
     vet ->size = 0; //está redundante pq o calloc foi usado. No caso de usar malloc, tem q por
     vet ->capacity = tam;
-    vet ->data = (float*)calloc(tam, sizeof(float));
+    vet->data = (float *)calloc(vet->capacity, sizeof(float));
     return vet;
 }
 
@@ -71,7 +72,49 @@ void print(const FloatVector *vector)
 }
 
 void append(FloatVector *vector, float n) {
-
+   
+   // printf("teste 1 concluido\n");
     vector->data[vector->size] = n;
+   // printf("teste 2 concluido\n");
     vector->size++;
+   // printf("teste 3 concluido\n");
+
 }
+
+void swap(float *a, float *b){
+
+            float aux = *b;
+            *b = *a;
+            *a = aux;
+
+}
+
+
+void bubble(float *vetor[], int tam_v)
+{
+   unsigned long int trocas = 0, comparacoes = 0;
+
+    for( int n = 0; n < tam_v - 1; n++)
+    {
+       bool swapped = false;
+    
+    for(int i = 0; i < tam_v - 1; i++)
+        {
+
+            if(vetor[i] >= vetor[i+1])
+            {
+            swap(&vetor[i], &vetor[i+1]);
+            swapped = true;
+            trocas++;
+            }
+            comparacoes++;
+        }
+        if(swapped == false)
+            {
+                break;
+            }
+    
+        
+    }
+        
+}   
