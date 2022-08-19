@@ -1,16 +1,20 @@
-//ARQUIVO ESPECIFICACOES
+// ARQUIVO ESPECIFICAÇOES
 typedef struct float_vector FloatVector;
 
 FloatVector *create(int tam);
 void destroy(FloatVector **ref_vector);
 int size(const FloatVector *vector);
-int capacity(const FloatVector *vector);
+int capacity (const FloatVector *vector);
 float at(const FloatVector *vector, int pos);
-float get(const FloatVector *vector, int index);
+float get(const FloatVector *vector);
 void append(FloatVector *vector, float n);
 void print(const FloatVector *vector);
+void swap(float *a, float *b);
+void bubble (float *vetor[], int tam_v);
 
-//bool compare(FloatVector*, FloatVector*);
-//void split(FloatVector*, FloatVector*);
-//void join(FloatVector*, FloatVector*);
-//bool isfull(FloatVector);
+
+// PODERIA EXISTIR
+
+//bool compare(FloatVector, FloatVector*)
+//void split(FloatVector*, FloatVector*)
+//void join(FloatVector*, FloatVector*)
