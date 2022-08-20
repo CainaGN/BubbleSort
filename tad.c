@@ -3,7 +3,7 @@
 #include <string.h>
 //#include "float_vector.h"
 #include "float_vector.c"
-#define tam_v 7
+#define tam_v 100
 
 int main(int argc, char const *argv[])
 {
@@ -12,7 +12,7 @@ int main(int argc, char const *argv[])
   FloatVector *vetor = create(tam_v);
   
   
-  /*append(vetor, 7.0);
+ /* append(vetor, 7.0);
   append(vetor, 1.0);
   append(vetor, 6.0);
   append(vetor, 3.0);
@@ -20,15 +20,15 @@ int main(int argc, char const *argv[])
   append(vetor, 5.0);
   append(vetor, 8.0);*/
  for(int i = 0; i < tam_v; i++)
- {
-  float value = (float)rand()/(float)(RAND_MAX/100);
-  append(vetor, value);
- }
+    {
+      float value = (float)rand()/(float)(RAND_MAX/100);
+      append(vetor, value);
+    }
   
   print(vetor);
-  printf("\n\n");
+  printf("\nORDENANDO...\n\n");
  
-  bubble(vetor, 7); 
+  mergesort(vetor, 0, tam_v - 1); 
 
 
   print(vetor);
