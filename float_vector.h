@@ -10,7 +10,11 @@ float get(const FloatVector *vector);
 void append(FloatVector *vector, float n);
 void print(const FloatVector *vector);
 void swap(float *a, float *b);
-void bubble (float *vetor[], int tam_v);
+void bubble (const FloatVector *vetor, int tam_v);
+void selectionSort(const FloatVector *vetor, int tam_v);
+void insertionSort(const FloatVector *vetor, int tam_v);
+void mergesort(const FloatVector *vetor, int inicio, int fim);
+void merge(const FloatVector *vetor, int inicio, int meio, int fim);
 
 
 // PODERIA EXISTIR
