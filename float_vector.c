@@ -8,7 +8,6 @@ struct float_vector{
     int capacity; //numero maximo de elementos
     int size; //quantidade atual de elementos
     float *data; //vetor de floats
-    struct float_vector *next;
 };
 
 /*
@@ -69,10 +68,6 @@ void print(const FloatVector *vector)
         printf("[%d] = %f\n", i, vector->data[i]);
     }
 
-   /* FloatVector *p;
-        for(p = vector; p!= NULL; p = p->next){
-            printf("%f\n", p->data);
-        }*/
 
 }
 
@@ -100,10 +95,9 @@ void swap(float *a, float *b)
 void bubble(const FloatVector *vetor, int tam_v)
 {
   
-  //printf("%f\t", vetor->data[3]);
-  
-   //printf("Teste 1 completo\n");
    unsigned long int trocas = 0, comparacoes = 0;
+   FILE *file;
+   file = fopen("dados.txt", "a");
    
     for( int n = 0; n < tam_v - 1; n++)
     {
@@ -129,15 +123,15 @@ void bubble(const FloatVector *vetor, int tam_v)
     //printf("Teste 5 completo\n");
         
     }
-       // print(&vetor);
+   fprintf(file, "\nBubble Sort\nTrocas: %d\nComparacoes: %d\nTamanho do vetor: %i\n\n", trocas, comparacoes, tam_v);
 }   
 
 
 void selectionSort(const FloatVector *vetor, int tam_v)
 {
-   //unsigned long int trocas = 0, comparacoes = 0;
-   //FILE *file;
-   //file = fopen("dados.txt", "a");
+   unsigned long int trocas = 0, comparacoes = 0;
+   FILE *file;
+   file = fopen("dados.txt", "a");
     for(int i = 0; i < tam_v - 1; i++)
     {
         int menor  = i; 
@@ -146,26 +140,26 @@ void selectionSort(const FloatVector *vetor, int tam_v)
             if(vetor->data[j] < vetor->data[menor])
             {
                 menor = j;
-               // comparacoes++;
+                comparacoes++;
             }
             
             if(menor != i){
             swap(&vetor->data[i], &vetor->data[menor]);
-           // trocas++;
-            //comparacoes++;
+            trocas++;
+            comparacoes++;
             }
         }
 
     }
-   //fprintf(file, "\nTrocas: %d\nComparacoes: %d\nTamanho do vetor: %i\n\n", trocas, comparacoes, size_v);
+   fprintf(file, "\nSelection Sort\nTrocas: %d\nComparacoes: %d\nTamanho do vetor: %i\n\n", trocas, comparacoes, tam_v);
 }
 
 
 void insertionSort(const FloatVector *vetor, int tam_v)
 {
-   //unsigned long int Movimentacao = 0;
-   //FILE *file;
-   //file = fopen("dados.txt", "a");
+   unsigned long int Movimentacao = 0;
+   FILE *file;
+   file = fopen("dados.txt", "a");
     
     for (int i = 1; i < tam_v; i++) 
     {
@@ -176,11 +170,11 @@ void insertionSort(const FloatVector *vetor, int tam_v)
         while (j >= 0 && vetor->data[j] > n) {
             vetor->data[j + 1] = vetor->data[j];
             j = j - 1;
-     //       Movimentacao++;
+            Movimentacao++;
         }
         vetor->data[j + 1] = n;
     }
-   //fprintf(file, "\nMovimentos: %d\nTamanho do vetor: %i\n\n", Movimentacao, size_v);
+   fprintf(file, "\nInsertion Sort\nMovimentos: %d\nTamanho do vetor: %i\n\n", Movimentacao, tam_v);
 
 }
 
@@ -246,4 +240,4 @@ void merge(const FloatVector *vetor, int inicio, int meio, int fim)
         k++;
     }
 
-}   
+}
