@@ -1,24 +1,21 @@
 #include <stdio.h>
 #include <stdlib.h>
 #include <string.h>
+#include <time.h>
 //#include "float_vector.h"
 #include "float_vector.c"
-#define tam_v 100
+#define tam_v 50
 
-int main(int argc, char const *argv[])
+int main()
 {
-  int tam = (int)argv[1];
-  /* code */
+
   FloatVector *vetor = create(tam_v);
-  
-  
- /* append(vetor, 7.0);
-  append(vetor, 1.0);
-  append(vetor, 6.0);
-  append(vetor, 3.0);
-  append(vetor, 4.0);
-  append(vetor, 5.0);
-  append(vetor, 8.0);*/
+  float timer = 0.0;
+    time_t begin = time(NULL);
+    FILE *file;
+    file = fopen("dados.txt", "a");
+
+
  for(int i = 0; i < tam_v; i++)
     {
       float value = (float)rand()/(float)(RAND_MAX/100);
@@ -27,10 +24,17 @@ int main(int argc, char const *argv[])
   
   print(vetor);
   printf("\nORDENANDO...\n\n");
- 
-  mergesort(vetor, 0, tam_v - 1); 
-
-
+  //bubble(vetor, tam_v);
+  selectionSort(vetor, tam_v);
+  //mergesort(vetor, 0, tam_v - 1); 
   print(vetor);
+
+  time_t end = time(NULL);
+        
+    timer = end - begin;
+    fprintf(file, "--------------------------", timer);
+    fclose(file);
+    printf("Fim da execucao!");
+
   return 0;
 }
