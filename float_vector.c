@@ -143,12 +143,13 @@ void selectionSort(const FloatVector *vetor, int tam_v)
                 comparacoes++;
             }
             
-            if(menor != i){
+        }
+
+       
             swap(&vetor->data[i], &vetor->data[menor]);
             trocas++;
             comparacoes++;
-            }
-        }
+
 
     }
    fprintf(file, "\nSelection Sort\nTrocas: %d\nComparacoes: %d\nTamanho do vetor: %i\n\n", trocas, comparacoes, tam_v);
