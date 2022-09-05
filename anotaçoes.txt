@@ -3,4 +3,7 @@ as msm coisas de antes mas nessas quantidades
 por especificações do computador
 análise curta para cada algoritmo. se o vetor já estiver ordenado, tem algum ganho de desempenho?
 conclusao final comparando todos.
+---------------------------------------------------------------
+inserção de item no meio de uma lista encadeada
+inserção de dados em uma lista prdenada
 
