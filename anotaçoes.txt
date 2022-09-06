@@ -7,3 +7,8 @@ conclusao final comparando todos.
 inserção de item no meio de uma lista encadeada
 inserção de dados em uma lista prdenada
 
+
+inserir ordenado
+pesquisa
+remover algum elemento
+implementar na LL fim da lista
