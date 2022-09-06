@@ -12,6 +12,8 @@ typedef struct _slinked_list
 {
     SNode *begin;
     int size;
+    SNode *end;
+
 } LinkedList;
 
 SNode *SNode_create(int val)
