@@ -7,8 +7,10 @@ conclusao final comparando todos.
 inserção de item no meio de uma lista encadeada
 inserção de dados em uma lista prdenada
 
+makefile https://embarcados.com.br/introducao-ao-makefile/
 
-inserir ordenado
-pesquisa
-remover algum elemento
-implementar na LL fim da lista
+inserir ordenado( )
+pesquisa(v)
+remover algum elemento(v)
+implementar na LL fim da lista(ponteiro para o fim da lista) ( )
+Implementaçoes marcadas no arquivo .h da lista duplamente ligada ( )
