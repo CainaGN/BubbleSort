@@ -13,7 +13,6 @@ typedef struct _slinked_list
     SNode *begin;
     int size;
     SNode *end;
-
 } LinkedList;
 
 SNode *SNode_create(int val)
@@ -116,14 +115,11 @@ void remove_node(SNode** head, int position)
 }
 
 
-
-
-
-void add_middle(LinkedList *L, int val)
+/*void add_middle(LinkedList *L, int val)
 {
     SNode *p = SNode_create(val);
 
-}
+}*/
 
 void print_LL(LinkedList *L)
 {
@@ -136,4 +132,23 @@ void print_LL(LinkedList *L)
     }
     printf("NULL\n");
 }
+
+
+void LinkedList_destroy(LinkedList **L_ref)//melhorar esse código
+{
+    LinkedList *L = *L_ref;
+    SNode *p = L->begin;
+    SNode *aux = NULL;
+
+    
+    while(p != NULL)
+    {
+        aux = p;
+        p = p->next;
+        free(aux);
+    }
+    free(L);
+
+}
+
 
