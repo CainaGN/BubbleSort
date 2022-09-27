@@ -14,3 +14,7 @@ pesquisa(v)
 remover algum elemento(v)
 implementar na LL fim da lista(ponteiro para o fim da lista) ( )
 Implementaçoes marcadas no arquivo .h da lista duplamente ligada ( )
+
+
+// para praticar: como juntar duas listas? Como mesclar duas listas?
+//bracket lens (instalar)
