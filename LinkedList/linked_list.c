@@ -153,4 +153,36 @@ void LinkedList_destroy(LinkedList **L_ref)
 
 }
 
+void ord_insert (SNode **L, int val)
+{
+    SNode *new = malloc(sizeof(SNode)), *aux;
+    if(new)
+    {
+        new->value = val;
+        if(*L == NULL)  
+        {
+            new->next = NULL;
+            *L = new;
+        }else if(new->value < (*L)->value)
+        {
+            new->next = *L;
+            *L = new;
+        }else
+        {
+            aux = *L;
+            while(aux->next && new->value > aux->next->value)
+            {
+                aux = aux->next;
+            }
+            new->next = aux->next;
+            aux->next = new;
+        }
+    
+    }else
+    {
+        printf("Erro");
+    }
+    
+
+}
 
