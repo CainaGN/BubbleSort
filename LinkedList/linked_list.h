@@ -12,5 +12,6 @@ void add_first(LinkedList *L, int val);
 LinkedList *LinkedList_create();
 SNode *SNode_create(int val);
 void LinkedList_destroy(LinkedList **L_ref);
+void ord_insert (SNode **L, int val);
 
 #endif
