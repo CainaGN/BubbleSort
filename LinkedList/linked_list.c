@@ -33,8 +33,18 @@ LinkedList *LinkedList_create()
 void add_first(LinkedList *L, int val)
 {
     SNode *p = SNode_create(val);
-    p->next = L->begin;
-    L->begin = p;
+    //p->next = L->begin;
+    
+    if(L->begin == NULL)
+    {
+        p->next = NULL;
+        L->begin = p;
+        L->end = p;
+    } else
+    {
+        p->next = L->begin;
+        L->begin = p;
+    }
     L->size++;
 }
 
@@ -44,14 +54,11 @@ void add_last(LinkedList *L, int val)
     if(L->begin == NULL)
     {
         L->begin = p;
+        L->end = p;
     } else 
     {
-        SNode *aux = L->begin;
-        while(aux->next != NULL)
-        {
-            aux = aux->next;
-        }
-        aux = aux->next;
+        L->end->next = p;
+        L->end = p;
         
     }
     L->size++;
@@ -85,6 +92,7 @@ void search(LinkedList *L, int value)
 
 void remove_node(SNode** head, int position)
 {
+  
     SNode* aux;
     SNode* ant;
     aux = *head;
@@ -115,12 +123,6 @@ void remove_node(SNode** head, int position)
 }
 
 
-/*void add_middle(LinkedList *L, int val)
-{
-    SNode *p = SNode_create(val);
-
-}*/
-
 void print_LL(LinkedList *L)
 {
     SNode *p= L->begin;
@@ -134,7 +136,7 @@ void print_LL(LinkedList *L)
 }
 
 
-void LinkedList_destroy(LinkedList **L_ref)//melhorar esse código
+void LinkedList_destroy(LinkedList **L_ref)
 {
     LinkedList *L = *L_ref;
     SNode *p = L->begin;
