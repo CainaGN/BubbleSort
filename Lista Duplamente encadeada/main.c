@@ -5,15 +5,18 @@
 
 int main()
 {
-    DoubleLinkedList *lista;
-    List_create(lista);
-    
-    //List *l = List_create();
-    List_add_first(lista, 8);
-    List_add_first(lista, 5);
-    List_add_first(lista, 3);
-    List_add_first(lista, 2);
+   
+    List *l = List_create();
 
-    print_LL(lista);
+
+    List_add_first(l, 8);
+    List_add_first(l, 5);
+    List_add_first(l, 3);
+    List_add_first(l, 2);
+
+
+    print_LL(l);
+    printf("\n");
+    rev_print_LL(l);
 
 }
