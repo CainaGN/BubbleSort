@@ -60,6 +60,7 @@ void List_Destroy(DoubleLinkedList **list)
 
 void List_add_first(DoubleLinkedList *list, int val)
 {
+
     Node *p = Node_create(val);
     if(List_is_empty(list))
     {
@@ -67,13 +68,13 @@ void List_add_first(DoubleLinkedList *list, int val)
     }else
     {
         p->next = list->begin;
-        list->begin->prev = p;   
+        list->begin->prev = p;     
     }
     list->begin = p;
     list->size++;
 }
 
-/*void print_LL(DoubleLinkedList *L)
+void print_LL(DoubleLinkedList *L)
 {
     Node *p= L->begin;
     printf("\nL -> ");
@@ -83,7 +84,7 @@ void List_add_first(DoubleLinkedList *list, int val)
         p = p->next;
     }
     printf("NULL\n");
-}*/
+}
 
 void List_add_last(DoubleLinkedList *list, int val)
 {
@@ -100,16 +101,6 @@ void List_add_last(DoubleLinkedList *list, int val)
     list->end = novo;
     list->size++;
 
-}
-
-void List_print(const DoubleLinkedList *list)
-{
-    Node *p= list->begin;
-    while(p != NULL)
-    {
-        printf("%d -> ", p->val);
-        p = p->next;
-    }
 }
 
 
