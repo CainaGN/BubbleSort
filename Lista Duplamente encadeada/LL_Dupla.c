@@ -111,3 +111,16 @@ void List_print(const DoubleLinkedList *list)
         p = p->next;
     }
 }
+
+
+void rev_print_LL(DoubleLinkedList *L)
+{
+    Node *p= L->end;
+    printf("\nL -> ");
+    while(p != NULL)
+    {
+        printf("%d -> ", p->val);
+        p = p->prev;
+    }
+    printf("NULL\n");
+}
